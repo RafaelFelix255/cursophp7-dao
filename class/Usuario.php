@@ -138,6 +138,19 @@ class Usuario{
 
     }
 
+    public function delete(){
+        
+        $sql = new Sql();
+
+        $sql->query("delete from tb_usuarios where idusuario = :idusuario",
+              array(':idusuario'=>$this->getIdusuario()));
+
+        $this->setIdusuario(0);
+        $this->setIdusuario("");
+        $this->setIdusuario("");
+        $this->setIdusuario(new DateTime());
+
+    }
 }
 
 ?>

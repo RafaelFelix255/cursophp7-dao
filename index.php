@@ -6,7 +6,7 @@ require_once("config.php");
 
 $usuarios = $sql->select("select * from tb_usuarios u order by u.idusuario");
 
-echo json_encode($usuarios);*/
+echo json_encode($usuarios);
 
 //Carregar um único usuário
 $usuario = new Usuario();
@@ -42,4 +42,13 @@ $usuario4->loadById(7);
 $usuario4->update("Kauany", "789456");
 echo $usuario4;
 echo "<br/><br/>";
+*/
+
+//Deletar um usuário do banco de dados
+$usuario5 = new Usuario();
+$usuario5->loadById(13);
+$usuario5->delete();
+echo $usuario5;
+echo "<br/><br/>";
+
 ?>
