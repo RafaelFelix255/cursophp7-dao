@@ -20,14 +20,26 @@ echo json_encode($lista);
 echo "<br/><br/>";
 
 //Carregar uma lista de usuário Buscando pelo Login
-$search = Usuario::search("Ra");
-echo json_encode($search);
+$lista2 = Usuario::search("Ra");
+echo json_encode($lista2);
 echo "<br/><br/>";
 
 //Carregar um usuário Buscando pelo Login e Senha
-$login = new Usuario();
-$login->login("Rafael", "felix15**");
+$usuario2 = new Usuario();
+$usuario2->login("Rafael", "felix15*");
+echo $usuario2;
+echo "<br/><br/>";
 
-echo $login;
+//Inserir um novo usuário através de uma procedure no banco de dados
+$usuario3 = new Usuario("Yasmim", "123456");
+$usuario3->insert();
+echo $usuario3;
+echo "<br/><br/>";
 
+//Alterar um usuário no banco de dados
+$usuario4 = new Usuario();
+$usuario4->loadById(7);
+$usuario4->update("Kauany", "789456");
+echo $usuario4;
+echo "<br/><br/>";
 ?>
